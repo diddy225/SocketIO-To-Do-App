@@ -10,14 +10,21 @@
 </head>
 <body>
   <div class="date-box">
-    <p><%= moment().format("ddd, MMM, DD, YYYY"),%></p>
+    <p id="day"><%= moment().format("ddd") %></p>
+    <p id="date"><%= moment().format("MMM, DD")%> <br/><%= moment().format('YYYY') %></p>
   </div>
-  <input type="text">
-  <h1>List</h1>
-  <ul>
-    <% for(let key in data) { %>
-      <li> <%= data[key] %> </li>
-      <% }; %>
-  </ul>
+  <form>
+  <input id="item" type="text">
+  <input id="btn" type="submit" hidden>
+  </form>
+  <ul id="content">
+ 
+  </ul> 
 </body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+<script src="/js/app.js"></script>
 </html>
