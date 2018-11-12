@@ -9,7 +9,10 @@
   <title>Live To Do App</title>
 </head>
 <body>
-  <p>Welcome to the home of <%= person %></p> 
+  <div class="date-box">
+    <p><%= moment().format("ddd, MMM, DD, YYYY"),%></p>
+  </div>
+  <input type="text">
   <h1>List</h1>
   <ul>
     <% for(let key in data) { %>

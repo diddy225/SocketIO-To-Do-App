@@ -1,4 +1,5 @@
 const path = require('path');
+const moment = require('moment');
 
 const items = {
   item1: 'Bread',
@@ -12,7 +13,7 @@ const items = {
 module.exports = function(app){
 
   app.get('/', function(req, res){
-    res.render('index', {person: 'Matthew', data: items});
+    res.render('index', {moment: moment, data: items});
   });
   
 }
