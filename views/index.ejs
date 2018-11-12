@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/css/reset.css' type="text/css"/>
+  <link rel='stylesheet' href='/css/styles.css' type="text/css"/>
+  <title>Live To Do App</title>
+</head>
+<body>
+  <p>Welcome to the home of <%= person %></p> 
+  <h1>List</h1>
+  <ul>
+    <% for(let key in data) { %>
+      <li> <%= data[key] %> </li>
+      <% }; %>
+  </ul>
+</body>
+</html>
