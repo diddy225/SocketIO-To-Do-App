@@ -1,10 +1,13 @@
 const express = require('express');
-const app = express();
-const server = require('http').createServer(app);
-const io = require('socket.io')(server);
 const mongoose = require('mongoose');
+const http = require('http');
 
-const PORT = process.env.PORT || 8080;
+
+const PORT = process.env.PORT || 8000;
+
+const app = express();
+const server = http.createServer(app);
+const io = require('socket.io')(server);
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));

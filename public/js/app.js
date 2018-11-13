@@ -1,23 +1,37 @@
 const socket = io();
 
-document.getElementById('btn').addEventListener("click", function(e){
-  const item = document.getElementById('item').value;
-  e.preventDefault();
-  socket.emit('send-item', {item: item});
-  document.getElementById('item').value = '';
-  socket.on('display-item', (data) => {
-    $('#content').append(`<li><label for="item">${data.item}</label> <input type="checkbox"></li>`)
+
+const sendItem = function(event) {
+  event.preventDefault();
+  const item = $("#item").val();
+
+  socket.emit("send-item", { item: item });
+  $("#item").val("");
+
+};
+
+
+const getItems = function(){
+  $('#content').empty();
+  $.ajax({
+    url: "api/todo",
+    method: "GET",
+    dataType: "json"
   })
-})
+    .then(function(data) {
+      data.forEach(ele => {
+        $("#content").append(`<li><label>${ele.item}</label><input type="checkbox"></li>`);
+      });
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 
-fetch('api/todo')
-.then(function(data){ return data.json()})
-.then(function(data){
-  data.forEach((e) => {
-    $('#content').append(`<li><label for="item">${e.item}</label> <input type="checkbox"></li>`)
-  });
-})
-.catch(function(err){
-  console.log(err);
-})
+    socket.on('display-item', (data) => {
+      console.log(data);
+      $("#content").append(`<li><label>${data.item}</label><input type="checkbox"></li>`);
+    })
+}
 
+  $('#btn').on('click', sendItem);
+  getItems();

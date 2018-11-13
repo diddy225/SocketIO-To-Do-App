@@ -10,7 +10,6 @@ class RestfulAPI {
       this.model.create(req.body)
         .then( (data) => {
           res.json(data);
-          console.log(data);
         })
         .catch( (err) => {
           res.json(err);
