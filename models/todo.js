@@ -8,6 +8,11 @@ let TodoSchema = new Schema({
       type: String,
       trim: true,
       required: true
+    },
+    complete: {
+      type: Boolean,
+      require: true,
+      default: false
     }
 });
 

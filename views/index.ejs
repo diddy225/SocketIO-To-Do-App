@@ -5,21 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/css/reset.css' type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
   <link rel='stylesheet' href='/css/styles.css' type="text/css"/>
   <title>Live To Do App</title>
+
 </head>
 <body>
-  <div class="date-box">
-    <p id="day"><%= moment().format("ddd") %></p>
-    <p id="date"><%= moment().format("MMM, DD")%> <br/><%= moment().format('YYYY') %></p>
-  </div>
+<div class="container">
   <form>
+    <div class="date-box">
+    <p id="day"><%= moment().format("ddd") %></p>
+    <p id="month"><%= moment().format("MMM") %><span id="date"><%= moment().format("DD") %></span><br/><span id="year"><%= moment().format('YYYY') %></span></p>
+  </div>
   <input id="item" type="text">
   <input id="btn" type="submit" hidden>
   </form>
-  <ul id="content">
-
-  </ul> 
+  <ul id="content"></ul>
+  </div> 
 </body>
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"

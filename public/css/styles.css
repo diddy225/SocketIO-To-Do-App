@@ -1,0 +1,85 @@
+body {
+  background-color: #F0EFE8;
+  font-family: 'Montserrat', sans-serif;
+  color: #5D616F;
+}
+
+.container{
+  background-color: #fff;
+  padding: 30px;
+  height: 85vh;
+  width: 50vh;
+  margin: 0 auto;
+  margin-top: 25px;
+  box-shadow: 3px 3px 10px #999;
+}
+
+
+.date-box{
+  display: inline-flex;
+  letter-spacing: 1.5px;
+  align-content: center;
+  margin-bottom: 15px;
+}
+
+.date-box p:first-child{
+  font-weight: 700;
+  font-size: 4em;
+  margin-right: 5px;
+}
+
+.date-box p:nth-child(2){
+  line-height: 1.3;
+  font-size: 1.5em;
+}
+
+#date{
+  margin-left: 6px;
+}
+
+#year {
+  letter-spacing: 5px;
+}
+
+form input{
+  border: none;
+  border-bottom: 1px solid #333;
+  background-color: none;
+  width: 80%;
+  font-size: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  color: #5D616F;
+}
+
+ul li:first-child{
+  margin-top: 10px;
+}
+
+ul li{
+  margin: 35px 0;
+  width: 100%;
+  font-size: 1.5em;
+  letter-spacing: 1.5;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+i {
+  color: #5D616F;
+  font-weight: normal;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.fa-times-circle{
+  color: #1DC4E3;
+  font-weight: 400;
+}
+
+#content{
+  margin-top: 30px;
+  height: 85%;
+  overflow: auto;
+}

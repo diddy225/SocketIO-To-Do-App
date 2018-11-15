@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const http = require('http');
 
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 const server = http.createServer(app);
 const io = require('socket.io')(server);
+
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
@@ -20,6 +21,6 @@ require('./sockets/todo-sockets.js')(io);
 require('./routes/html-routes.js')(app);
 require('./routes/api-routes.js')(app);
 
-server.listen(PORT, () => {
+server.listen(PORT, function() {
   console.log(`Server is listening on port ${PORT}`)
 })
