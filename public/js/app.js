@@ -70,5 +70,3 @@ $("#content").on("dblclick", "i", function() {
 
 $("#btn").on("click", sendItem);
 getItems();
-
-//items need to remain gray based on true false
