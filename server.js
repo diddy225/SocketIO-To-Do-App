@@ -15,7 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost/realtimetodo', { useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost/realtimetodo', { useNewUrlParser: true});
+mongoose.connect('mongodb://user:password1@ds041377.mlab.com:41377/heroku_wzvb04pg')
 
 require('./sockets/todo-sockets.js')(io);
 require('./routes/html-routes.js')(app);
