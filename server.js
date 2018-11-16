@@ -1,14 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const http = require('http');
-
-
-const PORT = process.env.PORT || 3000;
+const io = require('socket.io')(server);
+const server = http.createServer(app);
 
 const app = express();
-const server = http.createServer(app);
-const io = require('socket.io')(server);
 
+const PORT = process.env.PORT || 5000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
