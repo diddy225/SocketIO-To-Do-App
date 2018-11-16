@@ -2,11 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const http = require('http');
 
-
-const io = require('socket.io')(server);
-
 const app = express();
 const server = http.createServer(app);
+const io = require('socket.io')(server);
 
 const PORT = process.env.PORT || 5000;
 
