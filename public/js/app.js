@@ -1,5 +1,3 @@
-const socket = io();
-
 const sendItem = function(event) {
   event.preventDefault();
   const item = $("#item").val();
@@ -53,8 +51,7 @@ $("#content").on("click", "i", function() {
     data: data,
     dataType: "json"
   });
-  $(this)
-    .siblings("label")
+  $(this).siblings("label")
   $(this).removeClass("far fa-circle");
   $(this).addClass("far fa-times-circle");
 });
@@ -64,8 +61,11 @@ $("#content").on("dblclick", "i", function() {
     $.ajax({
       url: `api/todo/${id}`,
       method: "DELETE"
-    });
-    getItems();
+    })
+    .then(function(){
+      getItems();
+    })
+
 });
 
 $("#btn").on("click", sendItem);
